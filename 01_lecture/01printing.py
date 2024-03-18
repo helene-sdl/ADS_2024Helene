@@ -28,8 +28,8 @@ Quotation marks are used to signify strings.
 In the context of programming, strings are sequences of characters.
 Thus, the following two commands produce two quite different results:
 """
-# print(2 + 2 * 10)
-# print("2 + 2 * 10")
+#print(2 + 2 * 10)
+#print("2 + 2 * 10")
 
 """
 Thus far, you have probably used double quotation marks " to print out strings. 
@@ -37,6 +37,7 @@ In addition to the double quotation marks, Python also accepts single quotation 
 This comes in handy if you ever want to print out the actual quotation marks themselves:
 """
 # print('"Come right back!", shouted the police officer.')
+# print("\"Hello\nworld!")
 
 """
 It is also possible to combine strings with calculations:
@@ -47,8 +48,19 @@ It is also possible to combine strings with calculations:
 Each print command usually prints out a line of its own, complete with a change of line at the end. 
 However, if the print command is given an additional argument end = "", it will not print a line change.
 """
-print("Hi ", end="")
-print("there!")
+# print("Hi ", end="")
+# print("there!")
+
+# print("""---
+# dfdkdl
+# sdfl
+# """)
+#
+# print(str(2 + 2) + "\n\n")
+#
+# print("----- ")
+
+
 
 
 
