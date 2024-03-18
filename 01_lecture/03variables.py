@@ -62,6 +62,16 @@ Integers are numbers that do not have a decimal or fractional part, such as -15,
 #
 # print(number1)
 # print(number2)
+number1 = 100
+number2 = "100"
+
+print(number1)
+print(number2)
+
+print(number1 + number1)
+print(number2 + number2)
+
+
 
 """
 Variable types matter because different operations affect different types of variables in different ways. Let's have a look at an example:

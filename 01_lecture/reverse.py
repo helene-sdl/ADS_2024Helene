@@ -56,4 +56,10 @@ elif budget_difference > 0:
 else:
     print("You have bought all your groceries but no more money!")
 
-print("Goodbye " + name + "!")
+print("Goodbye, see you soon" + name + "!")
+if budget_difference > 0:
+    print("Have a nice day with the rest of your money!")
+elif budget_difference < 0:
+    print("Have a nice day!")
+else:
+    print("Have a nice day!")
