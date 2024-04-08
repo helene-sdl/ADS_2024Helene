@@ -1,3 +1,5 @@
+from math import sqrt
+
 """
 Write a program that prints out the message "hello world!" and then asks "shall we continue?"
 until the user inputs "no". Then the program should print out "okay then" and finish.
@@ -14,6 +16,13 @@ Example:
     okay then
 """
 # Write your solution here
+
+while True:
+    print("hello world!")
+    response = input("shall we continue?")
+    if response == "no":
+        print("Okay then")
+        break
 
 """
 Write a program which asks the user for integer numbers.
@@ -40,7 +49,16 @@ Example:
     Please type in a number: >> 0
     Exiting...
 """
-# Write your solution here
+
+while True:
+    number = int(input("Please type in a number:"))
+    if number < 0:
+        print("invalid number")
+    elif number > 0:
+        print(sqrt(number))
+    elif number == 0:
+        print("Exiting...")
+        break
 
 """
 This program should print out a countdown. However, the program doesn't quite work. Please fix it.
@@ -50,10 +68,11 @@ Hint: you can use the debugger of PyCharm to see how the program is executing.
 number = 5
 print("Countdown!")
 while True:
-  print(number)
-  number = number - 1
-  if number > 0:
-    break
+    if number >= 0:
+        print(number)
+        number = number - 1
+    if number == 0:
+        break
 
 print("Now!")
 
@@ -68,7 +87,15 @@ Examples:
     Year: >> 2024
     The next leap year after 2024 is 2028
 """
-# Write your solution here
+# Write your solution here ???
+year = int(input("Please type in a year: "))
+
+while True:
+    year += 1
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        print("The next leap year is:", year)
+        break
+
 
 """
 Please write a program which keeps asking the user for words. 
@@ -87,11 +114,36 @@ Example:
   Once upon a time there was a girl
 """
 # Write your solution here
+words = ""
+attempts = 0
+
+while True:
+    word = input("Please type in a word:")
+    print(word)
+    attempts += 1
+    words += word + " "
+    if word == "end":
+        print(words)
+        break
 
 """
 Change the program above so that the loop ends also if the user types in the same word twice in a row.
 """
 # Write your solution here
+
+prev_word = None
+words = ""
+while True:
+    word = input("Please type in a word: ")
+    print(word)
+    if word == prev_word:
+        print("You've entered the same word twice in a row. Exiting loop.")
+        break
+    words += word + " "
+    if word == "end":
+        print(words)
+        break
+    prev_word = word
 
 """
 Please write a program which asks the user for integer numbers. 
@@ -110,7 +162,32 @@ Example output
   Positive numbers 3
   Negative numbers 1
 """
-# Write your solution here
+# Write your solution here    ???????????
+
+numbers = []
+positive_numbers = 0
+negative_numbers = 0
+while True:
+    number = int(input("Please type in a number: "))
+
+    if number == 0:
+        break
+    numbers.append(number)
+    if number > 0:
+        positive_numbers += 1
+    elif number < 0:
+        negative_numbers += 1
+
+numbers_typed_in = len(numbers)
+sum_numbers = sum(numbers)
+mean_numbers = sum_numbers / numbers_typed_in if numbers_typed_in > 0 else 0
+
+print("Numbers typed in " + str(numbers_typed_in))
+print("The sum of the numbers is " + str(sum_numbers))
+print("The mean of the numbers is " + str(mean_numbers))
+print("Positive numbers " + str(positive_numbers))
+print("Negative numbers " + str(negative_numbers))
+
 
 """
 Largest Number
@@ -135,6 +212,22 @@ Examples:
 """
 # Write your solution here
 
+numbers = []
+number = float(input("Please type in a number: "))
+while True:
+    if number <= 0:
+        print("No number entered.")
+        break
+    number = float(input("Please type in a number: "))
+    numbers.append(number)
+    largest_number = max(numbers)
+    if number <= 0:
+        print("The largest number is " + str(largest_number))
+        break
+
+
+
+
 """
 Write a program that reads in an integer number (number of lines) and generates the subsequent output using 
 two loops on the console (see below). 
@@ -151,7 +244,22 @@ Examples:
   Invalid number!
 """
 # Write your solution here
+number_lines = int(input("Please type in the number of lines:"))
+i = 1
+current_number = 1
+while i <= number_lines:
+    j = 1
+    while j <= i:
+        print(current_number, end=" ")
+        current_number += 1
+        j += 1
+    print()
+    i += 1
 
+while True:
+    if number_lines <= 0:
+        print("Invalid number")
+        break
 """
 Write a program that uses loops to create a pyramid of stars '*' on the console. 
 The pyramid should have exactly 6 rows.
@@ -164,6 +272,22 @@ Example:
   ***********
 """
 # Write your solution here
+
+rows = 6
+i = 1
+while i <= rows:
+    j = 1
+    while j <= rows - i:
+        print(" ", end="")
+        j += 1
+
+    j = 1
+    while j <= 2 * i - 1:
+        print("*", end="")
+        j += 1
+
+    print()
+    i += 1
 
 """
 Write a program to calculate the average grade. The console reads in grades between 1 and 5 
@@ -183,3 +307,27 @@ Example:
   Negative marks: 2
 """
 # Write your solution here
+grades = []
+negative_grades = 0
+
+while True:
+    grade = int(input("Please enter a grade: "))
+
+    if grade == 0:
+        break
+    elif grade < 1 or grade > 5:
+        print("Invalid mark!")
+        continue
+
+    grades.append(grade)
+    if grade == 5:
+        negative_grades += 1
+
+average_grade = sum(grades) / len(grades)
+print("Average: " + str(average_grade))
+print("Negative marks: " + str(negative_grades))
+
+
+
+
+

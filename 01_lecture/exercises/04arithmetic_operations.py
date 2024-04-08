@@ -25,8 +25,7 @@ The program then prints out a message as follows:
 # Write your solution here
 name = input("What is your name? \n")
 year = int(input("Which year were you born? \n"))
-print("Hi," + name + " " + f'you will be {2024 - year} ' + "years old at the end of the year 2024."
-                                                           )
+print("Hi," + name + " " + f'you will be {2024 - year} ' + "years old at the end of the year 2024.")
 
 
 
@@ -71,6 +70,13 @@ Example:
     The sum of the numbers is 16 and the mean is 4.0
 """
 # Write your solution here
+number1 = int(input("Please type in the first number: "))
+number2 = int(input("Please type in the second number: "))
+number3 = int(input("Please type in the third number: "))
+number4 = int(input("Please type in the fourth number: "))
+sum_total = number1 + number2 + number3 + number4
+mean = sum_total / 4
+print("The sum of the three numbers is " + str(sum_total) + " and the mean is " + str(mean))
 
 
 """
@@ -81,3 +87,11 @@ Example:
     The reversed number is: >> 321
 """
 # Write your solution here
+n1 = int(input("Please type in a three-digit number: "))
+print(n1%10)
+print(n1//10%10)
+print(n1//100)
+
+print(f"{n1%10}{n1//10%10}{n1//100}")
+
+
