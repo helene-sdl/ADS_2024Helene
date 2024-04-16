@@ -9,6 +9,9 @@ Example:
     heyheyheyhey
 """
 # Write your solution here
+word = input("Please type in a string: ")
+amount = int(input("Please type in an amount: "))
+print(word * amount)
 
 """
 Write a program which asks the user for two strings and then prints out whichever is the longer of the two - 
@@ -27,6 +30,14 @@ Examples:
 """
 
 # Write your solution here
+string_num1 = input("Please type in string 1: ")
+string_num2 = input("Please type in string 2: ")
+if len(string_num1) == len(string_num2):
+    print("The strings are equally long")
+elif len(string_num1) > len(string_num2):
+    print(string_num1 + " is longer")
+elif len(string_num1) < len(string_num2):
+    print(string_num2 + " is longer")
 
 """
 Write a program which asks the user for a string. The program then prints out the input string in reversed order, 
@@ -36,6 +47,18 @@ Try to solve this example in 2 ways:
     * once using negative indeces
 """
 # Write your solution here
+input_string = input("Please type in a string: ")
+index = len(input_string) - 1
+while index >= 0:
+    print(input_string[index])
+    index -= 1
+
+input_string1 = input("Please type in a string: ")
+index = -1
+while abs(index) <= len(input_string1):
+    print(input_string1[index])
+    index -= 1
+
 
 """
 Write a program which asks the user for a string. 
@@ -50,6 +73,13 @@ Examples:
     The second and the second to last characters are a
 """
 # Write your solution here
+input_string = input("Please type in a string: ")
+sec_char = input_string[1]
+sec_to_last_char = input_string[-2]
+if input_string[1] == input_string[-2]:
+    print("The second and the second to last characters are " + input_string[1])
+elif sec_char != sec_to_last_char:
+    print("The second and the second to last characters are different")
 
 """
 Write a program which prints out a line of hash characters, the width of which is chosen by the user.
@@ -62,6 +92,8 @@ Examples:
     ##
 """
 # Write your solution here
+width = int(input("Width: "))
+print(width * '#')
 
 """
 Modify the previous program so that it also asks for the height, and prints out a rectangle of hash characters accordingly.
@@ -75,6 +107,12 @@ Example:
 """
 # Write your solution here
 
+width = int(input("Width: "))
+height = int(input("Height: "))
+print(width * '#')
+while height > 1:
+    print(width * '#')
+    height -= 1 
 """
 Write a program which asks the user for a string and then prints it out so that exactly 20 characters are displayed. 
 If the input is shorter than 20 characters, the beginning of the line is filled in with * characters.

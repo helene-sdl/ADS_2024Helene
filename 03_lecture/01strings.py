@@ -226,7 +226,7 @@ This method returns a copy of the string with any character in uppercase to lowe
 str.replace(old, new[, count])
 
 This method returns a string with all occurrences of the substring old substituted by the new. If the count 
-argument is given, all count number of occurrences are replaced.
+argument is given, all count number of occurrences are replaced. 
 """
 sentence = "i Enjoy traveling. Do you?"
 sentence.replace('Enjoy','dislike')             # "i dislike traveling. Do you?"
