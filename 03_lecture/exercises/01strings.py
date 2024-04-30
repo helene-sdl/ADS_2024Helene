@@ -128,6 +128,19 @@ Examples:
 """
 # Write your solution here
 
+
+def print_with_characters(string):
+    if len(string) < 20:
+        characters = "*" * (20 - len(string))
+        print(characters + string)
+    else:
+        print(string[:20])
+
+
+user_input = input("Please type in a string: ")
+print_with_characters(user_input)
+
+
 """
 Please write a program which asks the user for a string and then prints out a frame of * characters with the word in the centre. 
 The width of the frame should be 30 characters. You may assume the input string will always fit inside the frame.
@@ -150,6 +163,19 @@ Examples:
 # Write your solution here
 
 
+def print_frame(word):
+    frame_width = 30
+    word_length = len(word)
+    side = (frame_width - word_length - 2) // 2
+    print('*' * frame_width)
+    print('*' + ' ' * side + word + ' ' * side + '*')
+    print('*' * frame_width)
+
+
+user_input = input("Please type in a word: ")
+print_frame(user_input)
+
+
 """
 Write a program which asks the user to type in a string. 
 The program then prints out all the substrings which begin with the first character, 
@@ -163,6 +189,9 @@ Example:
     test
 """
 # Write your solution here
+word = input("Please type in a string: ")
+for i in range(len(word)):
+    print(word[:i+1])
 
 """
 Write a program which asks the user to type in a string. 
@@ -176,7 +205,11 @@ Example:
     est
     test
 """
-# Write your solution here
+# Write your solution here ??????
+
+word = input("Please type in a string: ")
+for i in range(len(word)):
+    print(word[i:])
 
 """
 Write a program which asks the user to input a string. The program then prints out different messages if the string 
@@ -195,6 +228,23 @@ You may assume the input will be in lowercase entirely. Have a look at the examp
     o not found
 """
 # Write your solution here
+character_a = "a"
+character_e = "e"
+character_o = "o"
+
+input_string = input("Please type in a string: ")
+if character_a in input_string:
+    print("a found")
+else:
+    print("a not found")
+if character_e in input_string:
+    print("e found")
+else:
+    print("e not found")
+if character_o in input_string:
+    print("o found")
+else:
+    print("o not found")
 
 
 """
@@ -222,6 +272,18 @@ Examples:
 """
 # Write your solution here
 
+
+def main():
+    word = input("Please type in a word: ")
+    char = input("Please type in a character: ")
+    index = word.find(char)
+
+    if index != -1 and index + 3 <= len(word):
+        print(word[index:index + 3])
+
+
+main()
+
 """
 Write a program which finds the second occurrence of a substring. If there is no second (or first) occurrence, 
 the program should print out a message accordingly.
@@ -243,4 +305,22 @@ Examples:
     Please type in a substring: >> ba
     The substring does not occur twice in the string.
 """
+
 # Write your solution here
+
+
+main_string = input("Please type in a string: ")
+sub_string = input("Please type in a substring: ")
+
+first_occurrence = main_string.find(sub_string)
+
+if first_occurrence == -1:
+    print("The substring does not occur in the string.")
+else:
+    second_occurrence = main_string.find(sub_string, first_occurrence + len(sub_string))
+    if second_occurrence == -1:
+        print("The substring does not occur twice in the string.")
+    else:
+        print(f"The second occurrence of '{sub_string}' is at index {second_occurrence}.")
+
+

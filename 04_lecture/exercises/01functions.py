@@ -11,6 +11,12 @@ Execute the function after its definition and run the program!
 
 # Write your solution here
 
+
+def bark():
+    print("Woof")
+
+
+bark()
 """
 ### Function with 1 Argument, additional logic ###
 
@@ -31,6 +37,29 @@ Examples:
 
 # Write your solution here
 
+
+def make_sound(animal):
+    animal = animal.lower()
+    if animal == "dog":
+        print("woof")
+    elif animal == "cat":
+        print("meow")
+    elif animal == "cow":
+        print("moo")
+    else:
+        print("???")
+
+
+while True:
+    animal_input = input("Please enter an animal: ").lower()
+    make_sound(animal_input)
+    if animal_input == "":
+        break                                 #just to break the loop
+
+
+
+
+
 """
 ### Function with 2 Arguments ###
 
@@ -50,7 +79,22 @@ Instead of "hard coding", let the user enter the text and the number of times to
 Ask the user repeatedly using a loop.
 """
 
+
 # Write your solution here
+def print_many_times(text, times):
+    print(f"{text} \n" * times)
+
+    
+print_many_times("Gimme Five!", 5)
+
+
+text_user = input("Please type in a word or phrase: ")
+times_user = int(input("Please type in how many times you want your input to be printed: "))
+print_many_times(text_user, times_user)
+
+
+
+
 
 """
 ### Return Values ###
@@ -67,10 +111,18 @@ Additional Task:
 Add a type hint to the return value of the function!
 """
 
+
 def print_greatest(number):
     print(f"The greatest number is {number}!")
 
+
 # Write your solution here
+def greatest_number(num1: int, num2: int, num3: int) -> int:
+    return max((num1, num2, num3))
+
+
+return_value = greatest_number(3,4,1)
+print_greatest(return_value)
 
 """
 ### Type Hints ###
@@ -95,6 +147,18 @@ Example Outputs:
 
 # Write your solution here
 
+
+def super_print(text: str, upper_case: bool):
+    if upper_case:
+        print(text.upper())
+    else:
+        print(text)
+
+
+super_print(text="hello world", upper_case=False)
+super_print(text="hello world", upper_case=True)
+
+
 """
 ### Default Values ###
 
@@ -111,4 +175,16 @@ Example:
     Hello Unknown!
 """
 
+
 # Write your solution here
+def greet(name="Unknown"):
+    print("Hello " + name + "!")
+
+
+user_input = input("Please type in a name:")
+if user_input.strip():
+    greet(user_input)
+else:
+    greet()
+
+
