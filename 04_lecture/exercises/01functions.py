@@ -180,7 +180,7 @@ Example:
 def greet(name="Unknown"):
     print("Hello " + name + "!")
 
-
+-
 user_input = input("Please type in a name:")
 if user_input.strip():
     greet(user_input)
