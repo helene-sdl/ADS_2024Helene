@@ -14,7 +14,15 @@ Example Output:
     Filtered list: [2, 4, 6, ..., 20]
 """
 
+
 # Write your solution here
+original_list = [i for i in range(1, 21)]
+filtered_list = [num for num in original_list if num % 2 ==0]
+
+print("Original list: " + str(original_list))
+print("Filtered list: " + str(filtered_list))
+
+
 
 """
 ### Exercise 2: Todo List Application ###

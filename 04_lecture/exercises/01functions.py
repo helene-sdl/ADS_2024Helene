@@ -116,6 +116,7 @@ def print_greatest(number):
     print(f"The greatest number is {number}!")
 
 
+
 # Write your solution here
 def greatest_number(num1: int, num2: int, num3: int) -> int:
     return max((num1, num2, num3))
@@ -178,13 +179,13 @@ Example:
 
 # Write your solution here
 def greet(name="Unknown"):
-    print("Hello " + name + "!")
+    if name.strip():
+        print("Hello, " + name + "!")
+    else:
+        print("Hello, Unknown!")
 
--
-user_input = input("Please type in a name:")
-if user_input.strip():
-    greet(user_input)
-else:
-    greet()
+
+user_name = input("Please enter your name: ")
+greet(user_name)
 
 
